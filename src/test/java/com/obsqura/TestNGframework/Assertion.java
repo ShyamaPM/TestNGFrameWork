@@ -90,21 +90,22 @@ public class Assertion extends Base
 		assertTrue(flag,"Expected and actual values are not same");
 	}
 	
-	//@SuppressWarnings("unlikely-arg-type")
 	@Test
 	public void verifyShowMessageButtonisDisplayed()
 	{
-		String expectedResult = "true";
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		boolean isShowMessageButtonDisplayed = showMessageButton.isDisplayed();
-		if(expectedResult.equals(isShowMessageButtonDisplayed))
-		{
-			System.out.println("Not matching");
-		}else
-		{
-			System.out.println("Expected result and Actual result are same");
-		}
 		assertTrue(isShowMessageButtonDisplayed, "Expected result and Actual result are not same");
+	}
+	
+	@Test
+	public void verifyGetTotalButtonIsEnabled()
+	{
+		WebElement getTotalButton=driver.findElement(By.xpath("//button[@id='button-two']"));
+		boolean isGetTotalButtonEnabled = getTotalButton.isEnabled();
+		
+		assertTrue(isGetTotalButtonEnabled, "Not enabled");
+		
 	}
 
 }
