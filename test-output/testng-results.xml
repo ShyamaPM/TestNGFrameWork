@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-06T08:42:30 IST" name="Default suite" finished-at="2023-07-06T08:42:43 IST" duration-ms="13048">
+  <suite started-at="2023-07-07T08:17:55 IST" name="Suite" finished-at="2023-07-07T08:18:14 IST" duration-ms="18598">
     <groups>
     </groups>
-    <test started-at="2023-07-06T08:42:30 IST" name="Default test" finished-at="2023-07-06T08:42:43 IST" duration-ms="13048">
-      <class name="com.obsqura.TestNGframework.WebElementCommands">
-        <test-method is-config="true" signature="initialiseBrowser()[pri:0, instance:com.obsqura.TestNGframework.WebElementCommands@2e3967ea]" started-at="2023-07-06T08:42:30 IST" name="initialiseBrowser" finished-at="2023-07-06T08:42:41 IST" duration-ms="10918" status="PASS">
+    <test started-at="2023-07-07T08:17:55 IST" name="Test" finished-at="2023-07-07T08:18:14 IST" duration-ms="18598">
+      <class name="com.obsqura.TestNGframework.Assertion">
+        <test-method is-config="true" signature="initialiseBrowser()[pri:0, instance:com.obsqura.TestNGframework.Assertion@6221a451]" started-at="2023-07-07T08:17:55 IST" name="initialiseBrowser" finished-at="2023-07-07T08:18:12 IST" duration-ms="16567" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseBrowser -->
-        <test-method signature="webElementCommand()[pri:0, instance:com.obsqura.TestNGframework.WebElementCommands@2e3967ea]" started-at="2023-07-06T08:42:41 IST" name="webElementCommand" finished-at="2023-07-06T08:42:42 IST" duration-ms="1168" status="PASS">
+        <test-method signature="verifySingleInputFieldWhenEnterDataOnTextFieldAndClcikOnShowMessageButton()[pri:0, instance:com.obsqura.TestNGframework.Assertion@6221a451]" started-at="2023-07-07T08:18:12 IST" name="verifySingleInputFieldWhenEnterDataOnTextFieldAndClcikOnShowMessageButton" finished-at="2023-07-07T08:18:13 IST" duration-ms="993" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- webElementCommand -->
-        <test-method is-config="true" signature="browserCloseorQuit()[pri:0, instance:com.obsqura.TestNGframework.WebElementCommands@2e3967ea]" started-at="2023-07-06T08:42:42 IST" name="browserCloseorQuit" finished-at="2023-07-06T08:42:43 IST" duration-ms="898" status="PASS">
+        </test-method> <!-- verifySingleInputFieldWhenEnterDataOnTextFieldAndClcikOnShowMessageButton -->
+        <test-method is-config="true" signature="browserCloseorQuit()[pri:0, instance:com.obsqura.TestNGframework.Assertion@6221a451]" started-at="2023-07-07T08:18:13 IST" name="browserCloseorQuit" finished-at="2023-07-07T08:18:14 IST" duration-ms="810" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserCloseorQuit -->
-      </class> <!-- com.obsqura.TestNGframework.WebElementCommands -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.obsqura.TestNGframework.Assertion -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

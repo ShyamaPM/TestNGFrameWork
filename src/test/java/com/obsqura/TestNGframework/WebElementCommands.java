@@ -25,8 +25,6 @@ public class WebElementCommands extends Base
 		String borderColorofShowMessageButton = showMessageButton.getCssValue("border-color");
 		String fontColorofShowMessageButton = showMessageButton.getCssValue("color");
 		String fontWeightofShowMessageButton = showMessageButton.getCssValue("font-weight");
-	
-		
 	}
 	
 	@Test
