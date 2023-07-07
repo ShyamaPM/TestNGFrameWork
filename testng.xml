@@ -5,9 +5,8 @@
     <classes>
       <class name="com.obsqura.TestNGframework.Assertion">
 		<methods>
-			<include name="verifySingleInputFieldWhenEnterDataOnTextFieldAndClcikOnShowMessageButton">
-
-			</include>
+		
+			<include name = "verifyShowMessageButtonisDisplayed"/>
 		</methods>
       </class>
     </classes>
