@@ -9,7 +9,6 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class Assertion extends Base
 {
@@ -157,6 +156,26 @@ public class Assertion extends Base
 		softAssert.assertEquals(showMessageButtonFontWeight, expectedFontWeight, "The weight is not same as "+expectedFontWeight);
 		
 		softAssert.assertAll();
+	}
+	
+	@Test
+	public void amazoneWordShouldNotBeinObsquraSite()
+	{
+		boolean pageSource = driver.getPageSource().equalsIgnoreCase("Page source does not contains Amazone word");
+		assertFalse(pageSource,"Page source contains Amazone word");
+	}
+	
+	@Test
+	public void verifyTheHeightAndWidthofShowMessageButton()
+	{
+		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
+		int actualHeightofShowMessageButton = 38;
+		int expectedHightofShowMessageButton = showMessageButton.getSize().getHeight();	
+		int actualWidthofShowMessageButton = 136;	
+		int expectedWidthOfShowMessageButton = showMessageButton.getSize().getWidth();
+		softAssert.assertEquals(actualHeightofShowMessageButton, expectedHightofShowMessageButton,"The height exceeds as compared to the "+expectedHightofShowMessageButton);
+		softAssert.assertEquals(actualWidthofShowMessageButton, expectedWidthOfShowMessageButton,"The width exceeds as compared to the "+expectedWidthOfShowMessageButton);
+		
 	}
 
 }

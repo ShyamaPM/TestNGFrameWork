@@ -5,7 +5,7 @@
     <classes>
       <class name="com.obsqura.TestNGframework.Assertion">
 		<methods>
-			<include name = "verifyButtonColorBackGroungColorAndFontWeightofShowMessageButton"/>
+			<include name = "verifyTheHeightAndWidthofShowMessageButton"/>
 		</methods>
       </class>
     </classes>
