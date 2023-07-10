@@ -5,7 +5,7 @@
     <classes>
       <class name="com.obsqura.TestNGframework.Assertion">
 		<methods>
-			<include name = "verifyTheHeightAndWidthofShowMessageButton"/>
+			<include name = "verifyEnterValueBisAllignedBelowofEnterValueA"/>
 		</methods>
       </class>
     </classes>

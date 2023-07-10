@@ -140,21 +140,19 @@ public class Assertion extends Base
 	}
 	
 	@Test
-	public void verifyButtonColorBackGroungColorAndFontWeightofShowMessageButton()
+	public void verifyButtonColorBackGroundColorAndFontWeightofShowMessageButton()
 	{
 		String expectedColor = "rgba(255, 255, 255, 1)";
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		String showMessageButtonColor = showMessageButton.getCssValue("color");
-	    softAssert.assertEquals(showMessageButtonColor, expectedColor,"The color is not same as "+expectedColor);
-		
 		String expectedBackGroundColor = "rgba(0, 123, 255, 1)";
 		String showMessageButtonBackGroundColor	= showMessageButton.getCssValue("background-color");
-		softAssert.assertEquals(showMessageButtonBackGroundColor, expectedBackGroundColor, "The actual color doesnot match with "+expectedBackGroundColor);
-		
 		String expectedFontWeight = "400";
 		String showMessageButtonFontWeight = showMessageButton.getCssValue("font-weight");
-		softAssert.assertEquals(showMessageButtonFontWeight, expectedFontWeight, "The weight is not same as "+expectedFontWeight);
 		
+		softAssert.assertEquals(showMessageButtonColor, expectedColor,"The color is not same as "+expectedColor);
+		softAssert.assertEquals(showMessageButtonBackGroundColor, expectedBackGroundColor, "The actual color doesnot match with "+expectedBackGroundColor);
+		softAssert.assertEquals(showMessageButtonFontWeight, expectedFontWeight, "The weight is not same as "+expectedFontWeight);
 		softAssert.assertAll();
 	}
 	
@@ -175,7 +173,17 @@ public class Assertion extends Base
 		int expectedWidthOfShowMessageButton = showMessageButton.getSize().getWidth();
 		softAssert.assertEquals(actualHeightofShowMessageButton, expectedHightofShowMessageButton,"The height exceeds as compared to the "+expectedHightofShowMessageButton);
 		softAssert.assertEquals(actualWidthofShowMessageButton, expectedWidthOfShowMessageButton,"The width exceeds as compared to the "+expectedWidthOfShowMessageButton);
-		
+	}
+	
+	@Test
+	public void verifyEnterValueBisAllignedBelowofEnterValueA()
+	{
+		WebElement enterValueA = driver.findElement(By.xpath("//input[@id='value-a']"));
+		int yAxisOFEnterValueA = enterValueA.getLocation().getY();
+		WebElement enterValueB = driver.findElement(By.xpath("//input[@id='value-b']"));
+		int yAxisofEnterValueB = enterValueB.getLocation().getY();
+		boolean expectedResult = yAxisOFEnterValueA<yAxisofEnterValueB;
+		assertTrue(expectedResult,yAxisofEnterValueB+" is not greater than "+yAxisOFEnterValueA);	
 	}
 
 }
