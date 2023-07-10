@@ -25,6 +25,12 @@ public class WebElementCommands extends Base
 		String borderColorofShowMessageButton = showMessageButton.getCssValue("border-color");
 		String fontColorofShowMessageButton = showMessageButton.getCssValue("color");
 		String fontWeightofShowMessageButton = showMessageButton.getCssValue("font-weight");
+		int showMessageButtonXAxis = showMessageButton.getLocation().getX();
+		int showMessageButtonYAxis = showMessageButton.getLocation().getY();
+		int singleInputFieldXAxis = singleInputField.getLocation().getX();
+		int singleInputFieldYAxis = singleInputField.getLocation().getY();
+		int showMessageButtonHeight = showMessageButton.getSize().getHeight();
+		int showMessButtonWidth = showMessageButton.getSize().getWidth();
 	}
 	
 	@Test

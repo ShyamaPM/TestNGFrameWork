@@ -6,7 +6,7 @@
       <class name="com.obsqura.TestNGframework.Assertion">
 		<methods>
 		
-			<include name = "verifyShowMessageButtonisDisplayed"/>
+			<include name = "verifyTwoInputFieldWhenValueEnterOnTextFieldAndClcikOnGetTotalButton"/>
 		</methods>
       </class>
     </classes>

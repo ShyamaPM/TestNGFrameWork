@@ -1,11 +1,15 @@
 package com.obsqura.TestNGframework;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class Assertion extends Base
 {
@@ -30,9 +34,9 @@ public class Assertion extends Base
 		int textEnterValueB = 20;
 		String expectedTotalValueOfAandB = "Total A + B : "+(textEnterValueA+textEnterValueB);
 		WebElement enterValueA=driver.findElement(By.xpath("//input[@id='value-a']"));
-		enterValueA.sendKeys("10");
+		enterValueA.sendKeys(String.valueOf(textEnterValueA));
 		WebElement enterValueB=driver.findElement(By.xpath("//input[@id='value-b']"));
-		enterValueB.sendKeys("20");
+		enterValueB.sendKeys(String.valueOf(textEnterValueB));
 		WebElement getTotalButton=driver.findElement(By.xpath("//button[@id='button-two']"));
 		getTotalButton.click();
 		String getTotalButtonText=getTotalButton.getText();
@@ -95,16 +99,46 @@ public class Assertion extends Base
 	{
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		boolean isShowMessageButtonDisplayed = showMessageButton.isDisplayed();
-		assertTrue(isShowMessageButtonDisplayed, "Expected result and Actual result are not same");
+		assertTrue(isShowMessageButtonDisplayed, "Show message button is not displayed");
 	}
 	
 	@Test
 	public void verifyGetTotalButtonIsEnabled()
 	{
 		WebElement getTotalButton=driver.findElement(By.xpath("//button[@id='button-two']"));
-		boolean isGetTotalButtonEnabled = getTotalButton.isEnabled();
+		boolean isGetTotalButtonEnabled = getTotalButton.isEnabled();	
+		assertTrue(isGetTotalButtonEnabled, "Get total button is not enabled");
 		
-		assertTrue(isGetTotalButtonEnabled, "Not enabled");
+	}
+	@Test
+	public void assertFalseSample()
+	{
+		boolean flag = false;
+		assertFalse(flag, "Flag is true");
+	}
+	
+	@Test
+	public void asserNullSample()
+	{
+		String value = null;
+		assertNull(value, "Value is not null");
+	}
+	
+	@Test
+	public void asserNotNullSample()
+	{
+		String value = "ABC";
+		assertNotNull(value, "Value is null");
+	}
+	@Test
+	public void softAssert()
+	{
+		String value1 = "123";
+		String value2 = "ABC";
+		SoftAssert softAssert = new SoftAssert();
+		softAssert.assertNull(value1, "Value is not null");
+		softAssert.assertNotNull(value2, "Value is null");
+		softAssert.assertAll();
 		
 	}
 
