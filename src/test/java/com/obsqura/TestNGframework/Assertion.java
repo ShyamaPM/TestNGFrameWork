@@ -135,11 +135,28 @@ public class Assertion extends Base
 	{
 		String value1 = "123";
 		String value2 = "ABC";
-		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertNull(value1, "Value is not null");
 		softAssert.assertNotNull(value2, "Value is null");
-		softAssert.assertAll();
+		softAssert.assertAll();		
+	}
+	
+	@Test
+	public void verifyButtonColorBackGroungColorAndFontWeightofShowMessageButton()
+	{
+		String expectedColor = "rgba(255, 255, 255, 1)";
+		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
+		String showMessageButtonColor = showMessageButton.getCssValue("color");
+	    softAssert.assertEquals(showMessageButtonColor, expectedColor,"The color is not same as "+expectedColor);
 		
+		String expectedBackGroundColor = "rgba(0, 123, 255, 1)";
+		String showMessageButtonBackGroundColor	= showMessageButton.getCssValue("background-color");
+		softAssert.assertEquals(showMessageButtonBackGroundColor, expectedBackGroundColor, "The actual color doesnot match with "+expectedBackGroundColor);
+		
+		String expectedFontWeight = "400";
+		String showMessageButtonFontWeight = showMessageButton.getCssValue("font-weight");
+		softAssert.assertEquals(showMessageButtonFontWeight, expectedFontWeight, "The weight is not same as "+expectedFontWeight);
+		
+		softAssert.assertAll();
 	}
 
 }
