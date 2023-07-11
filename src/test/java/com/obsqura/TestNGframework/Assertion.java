@@ -9,6 +9,7 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class Assertion extends Base
 {
@@ -134,6 +135,7 @@ public class Assertion extends Base
 	{
 		String value1 = "123";
 		String value2 = "ABC";
+		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertNull(value1, "Value is not null");
 		softAssert.assertNotNull(value2, "Value is null");
 		softAssert.assertAll();		
@@ -143,13 +145,13 @@ public class Assertion extends Base
 	public void verifyButtonColorBackGroundColorAndFontWeightofShowMessageButton()
 	{
 		String expectedColor = "rgba(255, 255, 255, 1)";
+		String expectedBackGroundColor = "rgba(0, 123, 255, 1)";
+		String expectedFontWeight = "400";
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		String showMessageButtonColor = showMessageButton.getCssValue("color");
-		String expectedBackGroundColor = "rgba(0, 123, 255, 1)";
 		String showMessageButtonBackGroundColor	= showMessageButton.getCssValue("background-color");
-		String expectedFontWeight = "400";
 		String showMessageButtonFontWeight = showMessageButton.getCssValue("font-weight");
-		
+		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(showMessageButtonColor, expectedColor,"The color is not same as "+expectedColor);
 		softAssert.assertEquals(showMessageButtonBackGroundColor, expectedBackGroundColor, "The actual color doesnot match with "+expectedBackGroundColor);
 		softAssert.assertEquals(showMessageButtonFontWeight, expectedFontWeight, "The weight is not same as "+expectedFontWeight);
@@ -168,11 +170,13 @@ public class Assertion extends Base
 	{
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
 		int actualHeightofShowMessageButton = 38;
-		int expectedHightofShowMessageButton = showMessageButton.getSize().getHeight();	
 		int actualWidthofShowMessageButton = 136;	
+		int expectedHightofShowMessageButton = showMessageButton.getSize().getHeight();	
 		int expectedWidthOfShowMessageButton = showMessageButton.getSize().getWidth();
+		SoftAssert softAssert = new SoftAssert();
 		softAssert.assertEquals(actualHeightofShowMessageButton, expectedHightofShowMessageButton,"The height exceeds as compared to the "+expectedHightofShowMessageButton);
 		softAssert.assertEquals(actualWidthofShowMessageButton, expectedWidthOfShowMessageButton,"The width exceeds as compared to the "+expectedWidthOfShowMessageButton);
+		softAssert.assertAll();
 	}
 	
 	@Test

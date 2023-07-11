@@ -8,7 +8,6 @@ import org.testng.asserts.SoftAssert;
 
 public class Base {
 	public WebDriver driver;
-	SoftAssert softAssert = new SoftAssert();
 	
 	@BeforeMethod
 	public void initialiseBrowser()
