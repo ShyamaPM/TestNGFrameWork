@@ -5,7 +5,7 @@
     <classes>
       <class name="com.obsqura.TestNGframework.Assertion">
 		<methods>
-			<include name = "verifyEnterValueBisAllignedBelowofEnterValueA"/>
+			<include name = "amazoneWordShouldNotBeinObsquraSite"/>
 		</methods>
       </class>
     </classes>

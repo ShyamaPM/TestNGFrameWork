@@ -159,7 +159,7 @@ public class Assertion extends Base
 	@Test
 	public void amazoneWordShouldNotBeinObsquraSite()
 	{
-		boolean pageSource = driver.getPageSource().equalsIgnoreCase("Page source does not contains Amazone word");
+		boolean pageSource = driver.getPageSource().contains("amazone");
 		assertFalse(pageSource,"Page source contains Amazone word");
 	}
 	
