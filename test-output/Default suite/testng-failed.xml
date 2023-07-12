@@ -3,20 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsqura.TestNGframework.TestNGAnnotations">
+      <class name="com.obsqura.TestNGframework.DropDown">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="afterTest"/>
-          <include name="testcase1"/>
-          <include name="beforeClass"/>
-          <include name="testcase2"/>
-          <include name="afterMethod"/>
-          <include name="beforeTest"/>
-          <include name="afterSuite"/>
-          <include name="afterClass"/>
-          <include name="beforeSuite"/>
+          <include name="browserCloseorQuit"/>
+          <include name="initialiseBrowser"/>
+          <include name="selectingLnaguageFromSeleniumSite"/>
         </methods>
-      </class> <!-- com.obsqura.TestNGframework.TestNGAnnotations -->
+      </class> <!-- com.obsqura.TestNGframework.DropDown -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

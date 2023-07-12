@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.obsqura.TestNGframework.Assertion">
+      <class name="com.obsqura.TestNGframework.CheckBoxDemo">
         <methods>
-          <include name="verifyButtonColorBackGroungColorAndFontWeightofShowMessageButton"/>
+          <include name="verifyMultipleCheckBoxDemo"/>
           <include name="browserCloseorQuit"/>
           <include name="initialiseBrowser"/>
         </methods>
-      </class> <!-- com.obsqura.TestNGframework.Assertion -->
+      </class> <!-- com.obsqura.TestNGframework.CheckBoxDemo -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
