@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.asserts.SoftAssert;
 
 public class Base {
 	public WebDriver driver;
@@ -12,7 +11,7 @@ public class Base {
 	@BeforeMethod
 	public void initialiseBrowser()
 	{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\abhij\\OneDrive\\Documents\\Eclipse_Workspace\\obsquraautomation\\src\\main\\java\\resources\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\abhij\\OneDrive\\Documents\\Eclipse_Workspace\\7rmartSuperMarket\\src\\main\\java\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/simple-form-demo.php");
 	}
