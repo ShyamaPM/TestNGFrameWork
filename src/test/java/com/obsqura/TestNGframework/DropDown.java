@@ -18,15 +18,25 @@ public class DropDown extends Base
 		select.selectByVisibleText("Red");
 		select.selectByValue("Yellow");
 		select.selectByIndex(3);
+		
+		List <WebElement> options = select.getOptions(); 
+		int size = options.size();
+		
+		WebElement multipleDropdown = driver.findElement(By.xpath("//select[@id='multi-select-field']"));
+	    Select select2 = new Select(multipleDropdown);
+	    boolean isMultipleSelect =select2.isMultiple();
+	    select2.selectByVisibleText("Red");
+		select2.selectByValue("Yellow");
+	    
 	}
 	
 	@Test
-	public void selectingLnaguageFromSeleniumSite()
+	public void selectingLanguageFromSeleniumSite()
 	{
 		String languageName = "Português (Brasileiro)";
 		driver.navigate().to("https://www.selenium.dev/");
 		List <WebElement> languages = driver.findElements(By.xpath("//ul[@class='dropdown-menu']//a"));
-		WebElement dropDown = driver.findElement(By.xpath("//a[text()='English']"));
+		WebElement dropDown = driver.findElement(By.xpath("//div[@class='dropdown']//child::a"));
 		dropDown.click();
 		for(WebElement languageList: languages)
 		{

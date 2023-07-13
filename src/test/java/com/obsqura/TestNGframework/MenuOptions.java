@@ -9,9 +9,8 @@ import org.testng.annotations.Test;
 public class MenuOptions extends Base
 {
 	@Test
-	public void menuSelection()
+	public void menuSelection(String menuCategory)
 	{
-		String menuCategory = "Checkbox Demo";
 		List <WebElement> menu = driver.findElements(By.xpath("//li[@class='list-group-item']//a"));
 		for(WebElement menuOption:menu)
 		{
@@ -23,5 +22,6 @@ public class MenuOptions extends Base
 			}
 		}
 	}
+	
 
 }

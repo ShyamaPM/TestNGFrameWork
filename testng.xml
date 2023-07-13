@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.obsqura.TestNGframework.MenuOptions">
+      <class name="com.obsqura.TestNGframework.DropDown">
 		<methods>
-			<include name = "menuSelection"/>
+			<include name = "selectingLanguageFromSeleniumSite"/>
 		</methods>
       </class>
     </classes>
