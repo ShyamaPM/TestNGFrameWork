@@ -14,6 +14,7 @@ public class Table extends Base
 	public void table()
 	{
 		List <String> nameList = new ArrayList<>();
+		String expectedResult = "Ashton Cox";
 		driver.navigate().to("https://selenium.obsqurazone.com/table-pagination.php");
 		WebElement tableLocate = driver.findElement(By.xpath("//table[@id='dtBasicExample']"));
 		List <WebElement> tableHeader = tableLocate.findElements(By.xpath("//th[contains(@class,'sorting_disabled')]"));
@@ -31,7 +32,6 @@ public class Table extends Base
 			String tableRowValueText = namesOfRow.getText();
 			nameList.add(tableRowValueText);
 		}
-		
 		
 		assertTrue(nameFind, "Name is not in the table");
 	}
