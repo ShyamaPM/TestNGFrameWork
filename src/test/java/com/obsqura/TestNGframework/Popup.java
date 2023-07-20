@@ -27,7 +27,6 @@ public class Popup  extends Base
             		
             if(!MainWindow.equalsIgnoreCase(ChildWindow))			
             {    		
-                 
                     // Switching to Child window
                     driver.switchTo().window(ChildWindow);
                     driver.findElement(By.xpath("(//div[contains(@class,'x1e0frkt')])[3]")).click();

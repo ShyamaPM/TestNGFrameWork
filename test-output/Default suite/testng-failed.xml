@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.obsqura.TestNGframework.FileUpload">
+      <class name="com.obsqura.TestNGframework.MenuOptions">
         <methods>
-          <include name="fileUploadUsingAutoIT"/>
+          <include name="menuSelection"/>
           <include name="browserCloseorQuit"/>
           <include name="initialiseBrowser"/>
         </methods>
-      </class> <!-- com.obsqura.TestNGframework.FileUpload -->
+      </class> <!-- com.obsqura.TestNGframework.MenuOptions -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

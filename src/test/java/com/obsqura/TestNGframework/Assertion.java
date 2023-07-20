@@ -6,8 +6,12 @@ import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -16,11 +20,18 @@ public class Assertion extends Base
 	@Test
 	public void verifySingleInputFieldWhenEnterDataOnTextFieldAndClcikOnShowMessageButton()
 	{
+		
 		String textFieldInput = "Hello";
-		String expectedMessage = "Your Message : "+textFieldInput;
+		String expectedMessage = "Your Message : "+textFieldInput;	
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+	
 		WebElement singleInputField = driver.findElement(By.xpath("//input[@id='single-input-field']"));
+		wait.until(ExpectedConditions.visibilityOf(singleInputField));
 		singleInputField.sendKeys(textFieldInput);
 		WebElement showMessageButton = driver.findElement(By.xpath("//button[@id='button-one']"));
+		
+		wait.until(ExpectedConditions.elementToBeClickable(showMessageButton));
+		
 		showMessageButton.click();
 		String showMessageButtonText=showMessageButton.getText();
 		WebElement yourMessage = driver.findElement(By.xpath("//div[contains(text(),' Message')]"));

@@ -3,9 +3,10 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.obsqura.TestNGframework.DropDown">
+      <class name="com.obsqura.TestNGframework.WebElementCommands">
 		<methods>
-			<include name = "selectingLanguageFromSeleniumSite"/>
+			<include name = "webElementCommand"/>
+			<include name="verifyTwoInputField"></include>
 		</methods>
       </class>
     </classes>

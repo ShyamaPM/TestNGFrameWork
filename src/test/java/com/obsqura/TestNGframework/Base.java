@@ -1,5 +1,7 @@
 package com.obsqura.TestNGframework;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -14,6 +16,7 @@ public class Base {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\abhij\\OneDrive\\Documents\\Eclipse_Workspace\\7rmartSuperMarket\\src\\main\\java\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("https://selenium.obsqurazone.com/simple-form-demo.php");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	@AfterMethod

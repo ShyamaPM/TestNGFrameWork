@@ -6,9 +6,12 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class FileUpload extends Base
@@ -16,13 +19,15 @@ public class FileUpload extends Base
 	@Test
 	public void fileUploadUsingAutoIT() throws IOException, InterruptedException
 	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		driver.navigate().to("https://www.ilovepdf.com/pdf_to_word");
 		WebElement selectPDFFileButton = driver.findElement(By.xpath("//a[@id='pickfiles']"));
 		selectPDFFileButton.click();
 		Runtime.getRuntime().exec("C:\\Users\\abhij\\OneDrive\\Documents\\AutoIt\\FileUpload.exe");
-		Thread.sleep(4000);
-		driver.findElement(By.xpath("//button[@id='processTask']")).click();
-		Thread.sleep(2000);		
+		
+		WebElement processTaskButton = driver.findElement(By.xpath("//button[@id='processTask']"));
+		wait.until(ExpectedConditions.elementToBeClickable(processTaskButton));	
+		processTaskButton.click();
 	}
 	
 	@Test
@@ -39,21 +44,28 @@ public class FileUpload extends Base
 		driver.navigate().to("https://www.ilovepdf.com/pdf_to_word");
 		WebElement selectPDFFileButton = driver.findElement(By.xpath("//a[@id='pickfiles']"));
 		selectPDFFileButton.click();
+		// file path passed as parameter to StringSelection
 		StringSelection ss = new StringSelection("C:\\Users\\abhij\\OneDrive\\Desktop\\SELENIUM.pdf");
-		     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-
-		     //imitate mouse events like ENTER, CTRL+C, CTRL+V
-		     Robot robot = new Robot();
-		     robot.delay(250);
-		     robot.keyPress(KeyEvent.VK_ENTER);
-		     robot.keyRelease(KeyEvent.VK_ENTER);
-		     robot.keyPress(KeyEvent.VK_CONTROL);
-		     robot.keyPress(KeyEvent.VK_V);
-		     robot.keyRelease(KeyEvent.VK_V);
-		     robot.keyRelease(KeyEvent.VK_CONTROL);
-		     robot.keyPress(KeyEvent.VK_ENTER);
-		     robot.delay(90);
-		     robot.keyRelease(KeyEvent.VK_ENTER);
+		//Clipboard copy
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+		//Robot object creation
+		Robot robot = new Robot();
+		robot.delay(250);
+		//pressing enter
+		robot.keyPress(KeyEvent.VK_ENTER);
+		//releasing enter
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		//pressing ctrl+v
+	    robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		//releasing ctrl+v
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		//pressing enter
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.delay(90);
+		//releasing enter
+		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
 
 }
